@@ -92,7 +92,7 @@ public class GenerateData {
 
         ArrayList<Object> objectList = new ArrayList<Object>();
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 50; i++) {
             Address adr;
             Address adr2;
             Customer cust;
@@ -104,6 +104,7 @@ public class GenerateData {
             Place plac;
             Goods goods;
             Warehouse ware = new Warehouse();
+            Warehouse ware2 = new Warehouse();
 
 
             adr = generateAddress();
@@ -120,7 +121,9 @@ public class GenerateData {
             cust.setAddress(adr);
             sup.setAddress(adr2);
             inv.addItem(item);
+            inv.setValue(item.getValue());
             inv2.addItem(item2);
+            inv2.setValue(item.getValue());
             item.addInvoice(inv);
             cust.setLastInvoice(inv);
             sup.setInvoice(inv2);
@@ -132,8 +135,12 @@ public class GenerateData {
             ware.addSupplier(sup);
             ware.addCustomer(cust);
             ware.addGoods(goods);
+            ware.setName("podstawowy");
+            ware2.setName("produkcyjny");
+
 
             objectList.add(ware);
+            objectList.add(ware2);
             objectList.add(adr);
             objectList.add(adr2);
             objectList.add(cust);

@@ -13,11 +13,12 @@ public class Warehouse {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
-    @OneToMany
+    private String name;
+    @OneToMany (cascade = {CascadeType.ALL})
     private Set <Goods> goods;
-    @OneToMany
+    @OneToMany (cascade = {CascadeType.ALL})
     private Set <Customer> customer;
-    @OneToMany
+    @OneToMany (cascade = {CascadeType.ALL})
     private Set <Supplier> supplier;
 
     public Set getGoods() {
@@ -51,5 +52,13 @@ public class Warehouse {
 
     public void addSupplier(Supplier supplier) {
         getSupplier().add(supplier);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

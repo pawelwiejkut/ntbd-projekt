@@ -15,7 +15,7 @@ public class Invoice {
     private int id;
     private String invNumber;
     private Double value;
-    @ManyToMany
+    @ManyToMany (cascade = {CascadeType.ALL})
     private  Set <Item> item;
     private  Date dateOfInv;
 

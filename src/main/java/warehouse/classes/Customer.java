@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Customer extends Company {
 
 
-    @OneToOne
+    @OneToOne (cascade = {CascadeType.ALL})
     private Invoice lastInvoice;
     private Boolean isActive;
     private String transportTime;

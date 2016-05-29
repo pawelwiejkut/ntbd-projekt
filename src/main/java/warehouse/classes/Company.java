@@ -12,7 +12,7 @@ public class Company {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
     private String name;
-    @OneToOne
+    @OneToOne (cascade = {CascadeType.ALL})
     private Address address;
     private String taxIdNumb;
 

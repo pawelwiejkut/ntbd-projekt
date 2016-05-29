@@ -37,16 +37,27 @@ public class Main {
         final Session session = getSession();
 
         GenerateData gd= new GenerateData();
-        ArrayList<Object> objectList = new ArrayList<Object>();
+        ArrayList<Object> objectList;
         objectList = gd.generateAll();
+
+        Crud crud = new Crud();
+
+        crud.moveProductbyValue(session);
+
+//        for (Object ob:results) {
+//            System.out.println(ob.toString());
+//        }
 
         try {
             session.beginTransaction();
 
-            for (Object ob : objectList) {
-                session.save(ob);
-
-            }
+//            for (Object ob : objectList) {
+//                session.save(ob);
+//
+//            }
+//            Invoice invoice ;
+//            invoice = crud.insertInvoice();
+//            session.save(invoice);
 
             session.getTransaction();
             session.getTransaction().commit();

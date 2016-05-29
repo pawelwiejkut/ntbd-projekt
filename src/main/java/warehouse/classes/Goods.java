@@ -10,11 +10,11 @@ import java.util.Date;
 public class Goods extends Item {
 
     private  Date dateOfRecipt;
-    @OneToOne
+    @OneToOne (cascade = {CascadeType.ALL})
     private  Customer customer;
-    @OneToOne
+    @OneToOne (cascade = {CascadeType.ALL})
     private Supplier supplier;
-    @OneToOne
+    @OneToOne (cascade = {CascadeType.ALL})
     private  Place place;
     private  Double dailyCons;
 

@@ -16,7 +16,7 @@ public class Item {
     private String name;
     private Double value;
     private int tax;
-    @ManyToMany
+    @ManyToMany (cascade = {CascadeType.ALL})
     private Set <Invoice> invoice;
 
     public String getName() {

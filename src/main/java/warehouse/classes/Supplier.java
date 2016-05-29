@@ -1,5 +1,6 @@
 package warehouse.classes;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import java.util.Date;
@@ -12,7 +13,7 @@ public class Supplier extends Company {
 
     private Date nextSupplyDate;
     private  Date lastSupplyDate;
-    @OneToOne
+    @OneToOne (cascade = {CascadeType.ALL})
     private  Invoice invoice;
     private  int deliveryTimeDays;
 

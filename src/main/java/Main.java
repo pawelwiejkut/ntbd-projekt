@@ -41,8 +41,10 @@ public class Main {
         objectList = gd.generateAll();
 
         Crud crud = new Crud();
-
-        crud.moveProductbyValue(session);
+        Reports rep = new Reports();
+        rep.mustSupply(session);
+//        rep.goodsBySupplyDate(session);
+//        crud.getGoodFromWar(session);
 
 //        for (Object ob:results) {
 //            System.out.println(ob.toString());

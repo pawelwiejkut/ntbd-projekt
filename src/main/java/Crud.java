@@ -14,7 +14,7 @@ public class Crud {
 
     ArrayList<Object> objectList = new ArrayList<Object>();
 
-
+//Create
     public Item insertItem(){
         String name;
         Double value;
@@ -36,7 +36,6 @@ public class Crud {
         return item;
 
     }
-
 
     public Invoice insertInvoice(){
         String number;
@@ -80,6 +79,7 @@ public class Crud {
         return invoice;
     }
 
+    //Update
     public static void moveProductbyValue(Session session){
         //select * from warehouse_supplier inner join supplier on warehouse_supplier.SUPPLIER_ID = supplier.ID inner join invoice on invoice_id = invoice.id inner join warehouse on warehouse_id=warehouse.id where value < 4000;
         Double value;
@@ -92,6 +92,23 @@ public class Crud {
                 "where war.id in  "+
                 "(SELECT war.id FROM Warehouse as war inner "+
                 "join war.supplier as sup where sup.invoice.value>"+value+")";
+
+        Query query = session.createQuery(hql);
+        int result = query.executeUpdate();
+        System.out.println("Rows affected: " + result);
+    }
+
+    //Delete
+    public static void getGoodFromWar(Session session){
+        String name;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Select good to pick up from warehouse");
+        name = scanner.next();
+
+        String hql = "DELETE from Invoice where id in (select cust.lastInvoice.id from Customer as cust where cust.name='Linger')";
+
+        String hql2 = "DELETE from Goods where customer.id in (select cust.id from Customer as cust where cust.name='Linger')";
 
         Query query = session.createQuery(hql);
         int result = query.executeUpdate();

@@ -10,7 +10,7 @@ import java.util.Date;
 public class Goods extends Item {
 
     private  Date dateOfRecipt;
-    @OneToOne (cascade = {CascadeType.ALL})
+    @OneToOne (cascade = {CascadeType.ALL},orphanRemoval = true)
     private  Customer customer;
     @OneToOne (cascade = {CascadeType.ALL})
     private Supplier supplier;
@@ -57,5 +57,13 @@ public class Goods extends Item {
 
     public void setDailyCons(Double dailyCons) {
         this.dailyCons = dailyCons;
+    }
+
+    @Override
+    public String toString() {
+        return "Goods{" +
+                "dateOfRecipt=" + dateOfRecipt +
+                ", dailyCons=" + dailyCons +
+                '}';
     }
 }

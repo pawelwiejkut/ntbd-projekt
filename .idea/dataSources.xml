@@ -5,10 +5,15 @@
       <imported>true</imported>
       <configured-by-url>true</configured-by-url>
       <remarks>$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml</remarks>
-      <jdbc-url>jdbc:oracle:thin:@192.168.1.2:1521:MainDB</jdbc-url>
+      <jdbc-url>jdbc:oracle:thin:@slickcode.ddns.net:1521:MainDB</jdbc-url>
       <explain-plan-config>
         <provider>com.intellij.database.plan.ExplainPlanProvider.NullExplainPlanProvider</provider>
       </explain-plan-config>
+      <libraries>
+        <library>
+          <url>file://$PROJECT_DIR$/lib/ojdbc7.jar</url>
+        </library>
+      </libraries>
     </data-source>
   </component>
 </project>

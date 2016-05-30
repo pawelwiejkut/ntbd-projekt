@@ -1,10 +1,14 @@
 package warehouse.classes;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 
 /**
  * Created by pawelwiejkut on 20.05.2016.
  */
+@OnDelete(action = OnDeleteAction.CASCADE)
 @MappedSuperclass
 public class Company {
 
@@ -39,4 +43,15 @@ public class Company {
     public void setTaxIdNumb(String taxIdNumb) {
         this.taxIdNumb = taxIdNumb;
     }
+
+    @Override
+    public String toString() {
+        return "Company{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address=" + address +
+                ", taxIdNumb='" + taxIdNumb + '\'' +
+                '}';
+    }
 }
+

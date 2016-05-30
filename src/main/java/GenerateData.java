@@ -57,6 +57,7 @@ public class GenerateData {
         sup.setTaxIdNumb(String.valueOf(df.getNumberBetween(10000,10000)));
         sup.setNextSupplyDate((df.getEmployeeHireDate()));
         sup.setLastSupplyDate((df.getEmployeeHireDate()));
+        sup.setDeliveryTimeDays(df.getNumberBetween(1,30));
         return sup;
     }
 

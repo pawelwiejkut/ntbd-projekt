@@ -1,11 +1,15 @@
 package warehouse.classes;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 
 /**
  * Created by pawelwiejkut on 20.05.2016.
  */
 @Entity
+@OnDelete(action = OnDeleteAction.CASCADE)
 public class Customer extends Company {
 
 

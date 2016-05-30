@@ -5,11 +5,12 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
-        <property name="hibernate.connection.url">jdbc:oracle:thin:@192.168.1.2:1521:MainDB</property>
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@slickcode.ddns.net:1521:MainDB</property>
         <property name="hibernate.connection.username">testuser</property>
         <property name="hibernate.connection.password">testpassword</property>
         <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
         <property name="show_sql">true</property>
+        <!--<property name="hibernate.format_sql">true</property>-->
         <property name="hibernate.hbm2ddl.auto">update</property>
 
 
